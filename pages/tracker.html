@@ -1,0 +1,40 @@
+<!-- pages/tracker.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillForge – Skill Tracker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <h1>SkillForge</h1>
+    <nav>
+      <a href="../index.html">Dashboard</a>
+      <a href="tracker.html">Skill Tracker</a>
+      <a href="goals.html">Goals</a>
+      <a href="certifications.html">Certifications</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tracker-section">
+      <h2>📚 Skill Tracker</h2>
+      <form id="skillForm">
+        <input type="text" id="skillName" placeholder="Enter Skill (e.g. JavaScript)" required />
+        <input type="number" id="skillProgress" placeholder="Progress (%)" min="0" max="100" required />
+        <button type="submit">Add Skill</button>
+      </form>
+
+      <div id="skillList" class="skill-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BalamuraliKrishna | SkillForge</p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

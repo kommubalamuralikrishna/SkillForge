@@ -1,0 +1,44 @@
+#certifications {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+#certifications h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.add-certification {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#cert-input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#cert-list .cert-item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.4rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.cert-item input[type="checkbox"] {
+  margin-right: 0.8rem;
+}
+
+.progress-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

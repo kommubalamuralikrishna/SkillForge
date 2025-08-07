@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillForge – Your Learning Tracker</title>
+  <link rel="stylesheet" href="certifications.css">
+</head>
+<body>
+
+  <!-- Other sections like header, navigation -->
+
+  <!-- ✅ Certifications Tracker Section -->
+  <section id="certifications">
+    <h2>🎓 Certifications Tracker</h2>
+    <div id="cert-list">
+      <!-- Certifications will be loaded here dynamically -->
+    </div>
+
+    <div class="add-certification">
+      <input type="text" id="cert-input" placeholder="Add new certification...">
+      <button onclick="addCertification()">Add</button>
+    </div>
+
+    <div class="progress-container">
+      <label>Progress:</label>
+      <progress id="cert-progress" value="0" max="100"></progress>
+      <span id="cert-percent">0%</span>
+    </div>
+  </section>
+
+  <!-- JavaScript file -->
+  <script src="certifications.js"></script>
+</body>
+</html>
