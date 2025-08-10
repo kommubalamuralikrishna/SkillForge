@@ -1,43 +1,76 @@
-let goals = [];
+let goals = JSON.parse(localStorage.getItem("goals")) || [];
+
+function saveGoals() {
+  localStorage.setItem("goals", JSON.stringify(goals));
+}
+
+function renderGoals() {
+  const grid = document.getElementById("goal-grid");
+  grid.innerHTML = "";
+
+  goals.forEach((goal, index) => {
+    const card = document.createElement("div");
+    card.className = "goal-card";
+
+    // Title
+    const title = document.createElement("div");
+    title.className = "goal-title";
+    title.textContent = goal.name;
+
+    // Progress bar
+    const progressBar = document.createElement("div");
+    progressBar.className = "card-progress-bar";
+
+    const progress = document.createElement("div");
+    progress.className = "card-progress";
+    progress.style.width = goal.progress + "%";
+    progress.textContent = goal.progress + "%";
+    progressBar.appendChild(progress);
+
+    // Update progress input
+    const progressInput = document.createElement("input");
+    progressInput.type = "number";
+    progressInput.min = 0;
+    progressInput.max = 100;
+    progressInput.value = goal.progress;
+    progressInput.className = "update-progress";
+    progressInput.onchange = () => updateProgress(index, progressInput.value);
+
+    // Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-card";
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = () => deleteGoal(index);
+
+    card.append(title, progressBar, progressInput, deleteBtn);
+    grid.appendChild(card);
+  });
+}
 
 function addGoal() {
   const input = document.getElementById("goal-input");
-  const goalText = input.value.trim();
+  const name = input.value.trim();
+  if (!name) return;
+  goals.push({ name, progress: 0 });
+  saveGoals();
+  renderGoals();
+  input.value = "";
+}
 
-  if (goalText) {
-    goals.push({ text: goalText, completed: false });
-    input.value = "";
+function updateProgress(index, value) {
+  const progress = Math.min(Math.max(parseInt(value), 0), 100);
+  goals[index].progress = progress;
+  saveGoals();
+  renderGoals();
+}
+
+function deleteGoal(index) {
+  if (confirm("Delete this goal?")) {
+    goals.splice(index, 1);
+    saveGoals();
     renderGoals();
   }
 }
 
-function toggleGoal(index) {
-  goals[index].completed = !goals[index].completed;
-  renderGoals();
-}
-
-function renderGoals() {
-  const list = document.getElementById("goal-list");
-  list.innerHTML = "";
-
-  goals.forEach((goal, index) => {
-    const item = document.createElement("div");
-    item.className = "goal-item";
-    item.innerHTML = `
-      <input type="checkbox" ${goal.completed ? "checked" : ""} onchange="toggleGoal(${index})">
-      <span class="${goal.completed ? "completed" : ""}">${goal.text}</span>
-    `;
-    list.appendChild(item);
-  });
-
-  updateGoalProgress();
-}
-
-function updateGoalProgress() {
-  const total = goals.length;
-  const completed = goals.filter(goal => goal.completed).length;
-  const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-
-  document.getElementById("goal-progress").value = percent;
-  document.getElementById("goal-percent").innerText = `${percent}%`;
-}
+// Initial render
+renderGoals();
