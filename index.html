@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SkillForge - Dashboard</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>SkillForge</h1>
+    <div class="logo">⚡ SkillForge</div>
     <nav>
       <a href="index.html">Dashboard</a>
       <a href="pages/tracker.html">Skill Tracker</a>
@@ -19,14 +19,34 @@
   </header>
 
   <main>
-    <section class="dashboard">
-      <h2>Welcome to SkillForge</h2>
-      <p>Your personal growth tracker. Select a section to get started.</p>
-      <ul>
-        <li>Track your coding and tech skills</li>
-        <li>Set goals and complete tasks</li>
-        <li>Manage your certifications</li>
-      </ul>
+    <section class="hero">
+      <h1>Welcome to SkillForge</h1>
+      <p>Your personal learning & growth companion</p>
+      <div class="hero-buttons">
+        <a href="pages/tracker.html" class="btn">Start Tracking</a>
+        <a href="pages/goals.html" class="btn secondary">Set Goals</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <i class="fas fa-code"></i>
+        <h3>Skill Tracker</h3>
+        <p>Track your coding and technical skills with progress indicators.</p>
+        <a href="pages/tracker.html" class="feature-link">Go to Tracker →</a>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Goals</h3>
+        <p>Set personal and professional growth goals and complete them on time.</p>
+        <a href="pages/goals.html" class="feature-link">Go to Goals →</a>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-certificate"></i>
+        <h3>Certifications</h3>
+        <p>Manage and showcase all your earned certifications in one place.</p>
+        <a href="pages/certifications.html" class="feature-link">View Certifications →</a>
+      </div>
     </section>
   </main>
 
