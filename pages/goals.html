@@ -2,28 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learning Goals – SkillForge</title>
-  <link rel="stylesheet" href="goal.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-  <section id="goals">
-    <h2>🎯 Learning Goals</h2>
-    <div id="goal-list">
-      <!-- Goals will appear here dynamically -->
-    </div>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">⚡ SkillForge</div>
+    <nav>
+      <a href="../index.html">Dashboard</a>
+      <a href="tracker.html">Skill Tracker</a>
+      <a href="goals.html" class="active">Goals</a>
+      <a href="certifications.html">Certifications</a>
+    </nav>
+  </header>
 
-    <div class="add-goal">
-      <input type="text" id="goal-input" placeholder="Add a new learning goal...">
-      <button onclick="addGoal()">Add</button>
-    </div>
+  <!-- Main Section -->
+  <main class="center-wrapper">
+    <section id="goals" class="tracker-section">
+      <h2><i class="fas fa-bullseye"></i> Learning Goals</h2>
+      <p class="subtitle">Plan, track, and achieve your learning milestones</p>
 
-    <div class="progress-container">
-      <label>Progress:</label>
-      <progress id="goal-progress" value="0" max="100"></progress>
-      <span id="goal-percent">0%</span>
-    </div>
-  </section>
+      <!-- Add Goal Form -->
+      <div class="add-goal tracker-form">
+        <input type="text" id="goal-input" placeholder="Add a new learning goal..." required>
+        <button onclick="addGoal()" class="btn">+ Add</button>
+      </div>
+
+      <!-- Goals Grid -->
+      <div id="goal-grid" class="goal-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BalamuraliKrishna | SkillForge</p>
+  </footer>
 
   <script src="goal.js"></script>
 </body>
