@@ -1,53 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillForge – Certifications</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
+/* Certifications Card */
+#certifications {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
 
-  <!-- Navbar -->
-  <header>
-    <div class="logo">⚡ SkillForge</div>
-    <nav>
-      <a href="../index.html">Dashboard</a>
-      <a href="tracker.html">Skill Tracker</a>
-      <a href="goals.html">Goals</a>
-      <a href="certifications.html" class="active">Certifications</a>
-    </nav>
-  </header>
+/* Title */
+#certifications h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #4a90e2;
+}
 
-  <!-- Centered Content -->
-  <main class="center-wrapper">
-    <section class="tracker-section">
-      <h2><i class="fas fa-certificate"></i> Certifications Tracker</h2>
-      <p class="subtitle">Keep track of your learning achievements</p>
+#certifications .subtitle {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
 
-      <!-- Certifications List -->
-      <div id="cert-list" class="skill-list"></div>
+/* Add Certification Form */
+.add-certification {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
 
-      <!-- Add Certification -->
-      <div class="tracker-form">
-        <input type="text" id="cert-input" placeholder="Add new certification..." required>
-        <button onclick="addCertification()" class="btn">+ Add</button>
-      </div>
+#cert-input {
+  flex: 1;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
 
-      <!-- Progress -->
-      <div class="progress-container">
-        <label>Progress:</label>
-        <progress id="cert-progress" value="0" max="100"></progress>
-        <span id="cert-percent">0%</span>
-      </div>
-    </section>
-  </main>
+#cert-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
 
-  <footer>
-    <p>&copy; 2025 BalamuraliKrishna | SkillForge</p>
-  </footer>
+.add-certification button {
+  padding: 0.7rem 1rem;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-  <script src="certifications.js"></script>
-</body>
-</html>
+.add-certification button:hover {
+  background: #357ac9;
+}
+
+/* Certification List */
+#cert-list .cert-item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cert-item input[type="checkbox"] {
+  margin-right: 0.8rem;
+}
+
+.cert-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-container label {
+  font-weight: bold;
+}
+
+progress {
+  flex: 1;
+  height: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #4a90e2, #6a5acd);
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #4a90e2, #6a5acd);
+}
