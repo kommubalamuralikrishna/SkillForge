@@ -2,33 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SkillForge – Your Learning Tracker</title>
-  <link rel="stylesheet" href="certifications.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillForge – Certifications</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-  <!-- Other sections like header, navigation -->
+  <!-- Navbar -->
+  <header>
+    <div class="logo">⚡ SkillForge</div>
+    <nav>
+      <a href="../index.html">Dashboard</a>
+      <a href="tracker.html">Skill Tracker</a>
+      <a href="goals.html">Goals</a>
+      <a href="certifications.html" class="active">Certifications</a>
+    </nav>
+  </header>
 
-  <!-- ✅ Certifications Tracker Section -->
-  <section id="certifications">
-    <h2>🎓 Certifications Tracker</h2>
-    <div id="cert-list">
-      <!-- Certifications will be loaded here dynamically -->
-    </div>
+  <!-- Centered Content -->
+  <main class="center-wrapper">
+    <section class="tracker-section">
+      <h2><i class="fas fa-certificate"></i> Certifications Tracker</h2>
+      <p class="subtitle">Keep track of your learning achievements</p>
 
-    <div class="add-certification">
-      <input type="text" id="cert-input" placeholder="Add new certification...">
-      <button onclick="addCertification()">Add</button>
-    </div>
+      <!-- Certifications List -->
+      <div id="cert-list" class="skill-list"></div>
 
-    <div class="progress-container">
-      <label>Progress:</label>
-      <progress id="cert-progress" value="0" max="100"></progress>
-      <span id="cert-percent">0%</span>
-    </div>
-  </section>
+      <!-- Add Certification -->
+      <div class="tracker-form">
+        <input type="text" id="cert-input" placeholder="Add new certification..." required>
+        <button onclick="addCertification()" class="btn">+ Add</button>
+      </div>
 
-  <!-- JavaScript file -->
+      <!-- Progress -->
+      <div class="progress-container">
+        <label>Progress:</label>
+        <progress id="cert-progress" value="0" max="100"></progress>
+        <span id="cert-percent">0%</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BalamuraliKrishna | SkillForge</p>
+  </footer>
+
   <script src="certifications.js"></script>
 </body>
 </html>
