@@ -1,44 +1,53 @@
-#certifications {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillForge – Certifications</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
 
-#certifications h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
+  <!-- Navbar -->
+  <header>
+    <div class="logo">⚡ SkillForge</div>
+    <nav>
+      <a href="../index.html">Dashboard</a>
+      <a href="tracker.html">Skill Tracker</a>
+      <a href="goals.html">Goals</a>
+      <a href="certifications.html" class="active">Certifications</a>
+    </nav>
+  </header>
 
-.add-certification {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
+  <!-- Centered Content -->
+  <main class="center-wrapper">
+    <section class="tracker-section">
+      <h2><i class="fas fa-certificate"></i> Certifications Tracker</h2>
+      <p class="subtitle">Keep track of your learning achievements</p>
 
-#cert-input {
-  flex: 1;
-  padding: 0.5rem;
-  font-size: 1rem;
-}
+      <!-- Certifications List -->
+      <div id="cert-list" class="skill-list"></div>
 
-#cert-list .cert-item {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem 0;
-  padding: 0.4rem;
-  border-bottom: 1px solid #ddd;
-}
+      <!-- Add Certification -->
+      <div class="tracker-form">
+        <input type="text" id="cert-input" placeholder="Add new certification..." required>
+        <button onclick="addCertification()" class="btn">+ Add</button>
+      </div>
 
-.cert-item input[type="checkbox"] {
-  margin-right: 0.8rem;
-}
+      <!-- Progress -->
+      <div class="progress-container">
+        <label>Progress:</label>
+        <progress id="cert-progress" value="0" max="100"></progress>
+        <span id="cert-percent">0%</span>
+      </div>
+    </section>
+  </main>
 
-.progress-container {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+  <footer>
+    <p>&copy; 2025 BalamuraliKrishna | SkillForge</p>
+  </footer>
+
+  <script src="certifications.js"></script>
+</body>
+</html>
